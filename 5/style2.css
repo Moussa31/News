@@ -21,7 +21,7 @@ ul li{
 
 body, html {
     overflow: hidden;
-    max-width: 1400;
+    max-width: 1600px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -201,13 +201,14 @@ body, html {
     background-repeat: no-repeat;
   }
 #group4 .parallax__layer--base
+{
  background: rgb(184,223,101);
     background-image: url(.jpg);
     max-width: 1600;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+  }
 #groupe4 .parallax__layer--back{
  
     background-image: url(6.jpg);width:;
