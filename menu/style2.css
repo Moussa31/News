@@ -1,0 +1,287 @@
+html{
+    background: #2A2A2A;
+    font: 1.1em sans-serif;
+}
+
+
+ul{
+    display: table;
+    width:100%;
+    margin: 0px auto;
+    padding: 0;
+}
+ul li{
+    display: table-cell;
+
+}
+
+
+
+/*---------------------------------------------------------------------------*/
+
+body, html {
+    overflow: hidden;
+    max-width: 1400;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  body {font-size: 250%;
+    font: 100% / 1.5 Arial;
+  }
+
+  * {
+    margin:0;
+    padding:0;}
+
+     /* Parallax base styles
+  --------------------------------------------- */
+
+  body {
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+  }
+
+  .fdp {
+    position: relative;
+  }
+
+  .parallax__group {
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+
+  .parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+  }
+
+ #myvideo {
+    width: 100%;
+    height:;
+    background-size: 100% 100%;
+    background-color: black; 
+      background-image: /* our video */;
+      background-position: center center;
+      background-size: contain;
+      object-fit: cover; /*cover video background */
+      z-index:;
+  }
+
+
+
+
+
+
+  #group1 {
+    z-index: 5;
+     /* slide over group 2 */
+  }
+  #group1 .parallax__layer--base {
+  }  
+ .logo1{
+ 
+    color: white;
+    position: absolute;
+    top:0;left:0;
+    bottom:0 ;
+    right: 0;
+    height: 181px;
+    margin: auto 0;
+    
+  }
+   .menu{
+ 
+    color: white;
+    position: absolute;
+    top:0;left:0;
+    bottom:0 ;
+    right: 0;
+    height: 100%;
+    margin: auto 0;
+    
+  }
+
+.h1{
+    font-size: 5em;
+    font-family: interstateregular,arial,helvetica;
+    color: #fff;
+    margin:0 auto;
+    padding: 0;
+    border: solid white;
+
+    border-left: 3px;
+    border-right: 3px;
+    width: 181px;
+
+  }
+
+
+
+
+  #group2 {
+    z-index: 3; 
+    /* slide under groups 1 and 3 */
+  }
+  #group2 .parallax__layer--back {
+    
+    background-image: url(http://www.webia-creation.fr/wp-content/themes/fullscreen/images/furniture_bck.jpg);width:;
+   max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+  }
+
+  #group3 {
+    z-index: 4; /* slide over group 2 and 4 */
+  }
+  #group3 .parallax__layer--base {
+   
+    background-image: url(http://www.allfons.ru/pic/201201/1366x768/allfons.ru-5188.jpg);
+   max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #group3 .parallax__layer--fore{
+     max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url(); 
+  }
+
+  #group4 {
+    z-index: 2; /* slide under group 3 and 5 */
+  }
+  #group4 .parallax__layer--deep {
+    
+    background-image: url(http://img1.mxstatic.com/wallpapers/4545b05465591ec57fb3ae3dc0e2c4c6_large.jpeg);
+    max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+#group4 .parallax__layer--base
+ background: rgb(184,223,101);
+    background-image: url(.jpg);
+    max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+#groupe4 .parallax__layer--back{
+ 
+    background-image: url(6.jpg);width:;
+   max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #group5 {
+    z-index: 4; /* slide over group 4 and 6 */
+  }
+  #group5 .parallax__layer--base {
+    
+    background-image: url(); 
+    max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #groupe5 .parallax__layer--fore{
+    max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:url(); 
+  });
+  }
+
+  #group6 {
+    z-index: 2; /* slide under group 5 and 7 */
+  }
+  #group6 .parallax__layer--back {
+   
+    background-image: url(ORDER.jpg);
+   max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #group7 {
+    z-index: 3; /* slide over group 7 */
+  }
+  #group7 .parallax__layer--base {
+   
+    background-image: url(MH-logo.jpg);
+    max-width: 1600;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+
+
+.title {
+  max-width: 1600px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  
+}  
+
+
+
+
+
+
+
+
+
+
+
