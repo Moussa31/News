@@ -3,7 +3,9 @@
 <head>
 	<title> XXX </title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="flux.min.js" type="text/javascript" charset="utf-8"></script>
+     
 </head>
 <body>
  
@@ -64,16 +66,15 @@
     </div>
     <div id="group3" class="parallax__group">
       <div class="parallax__layer parallax__layer--fore">
-        <div class="title">Couche de premier plan1</div>
-        <div class="produit">
-          <ul class="navbar">
-            <li class="item" id="item1"><a href=""></a></li>
-            <li class="item" id="item2"><a href=""></a></li>
-            <li class="item" id="item3"><a href=""></a></li>
-            <li class="item" id="item4"><a href=""></a></li>
+      <div class="title">Couche de premier plan1</div>
+        <div id="slidercontainer">
 
-          </ul> 
-        </div>
+          <div id="slider">
+                    <img src="img/Delorean.jpg" alt="" />
+                    <img src="img/6.jpg" alt=""  />
+                    <img src="img/nfs.jpg" alt="" />
+          </div>
+      </div>
       </div>
       <div class="parallax__layer parallax__layer--base">
         <div class="title">Couche de base3</div>
@@ -164,6 +165,21 @@
     <div class="footer"> COPYRIGHT 2014 HATARBACH & MARTIN </div>
 
 </footer>
-    
+
+
+ <script type="text/javascript" charset="utf-8">
+      $(function(){
+        if(!flux.browser.supportsTransitions)
+          alert("Flux Slider requires a browser that supports CSS3 transitions");
+          
+        window.f = new flux.slider('#slider', {
+          autoplay: false,
+          pagination: true,
+          transitions: ['turn'],
+        });
+        
+      
+      });
+  </script>    
 </body>
 </html>
