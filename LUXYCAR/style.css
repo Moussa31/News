@@ -41,16 +41,55 @@
     perspective: 300px;
   }
   
-ul{
+ .backtotop
+{
+	bottom: 10px;
+	right: 20px;
+	position:fixed;
+  z-index: 150;
+}  
+
+.menu{
+ 
+    z-index: 100;
+    position: absolute;
+    top:0;left:0;
+    bottom:0 ;
+    right: 0;
+    height: 100%;
+    margin: auto 0;
+    
+  }
+
+ .item{
+ 	margin-left:;
+}
+
+
+.nav-bar{
     display: table;
     width:100%;
-    margin: 0px auto;
-    padding: 0;
+    margin-left:70px;
+    margin-right:auto;
+    padding:20px;
 }
-ul li{
+.nav-bar .item {
     display: table-cell;
 
 }
+
+ .link, .link:visited {
+    /* Les liens "au repos" et déjà visités antérieurement */
+    color: #ffffff; /* couleur blanche */
+}
+.link:hover, .link:focus, .link:active {
+    /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
+    color: #ff0000;
+}
+
+ .link {
+      text-decoration: none;
+      font-size: 30px; }
 
   .fdp {
     position: relative;
@@ -938,7 +977,7 @@ input, select { vertical-align: middle; }
 
 
 
-body { font:12px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+
 
 select, input, textarea, button { font:99% sans-serif; }
 
