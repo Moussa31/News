@@ -76,7 +76,7 @@ body {
 }
 
 .link:hover, .link:focus, .link:active {
-  color: #ff0000;
+  color: #f64a0c;
 }
 
 .link {
@@ -856,16 +856,16 @@ p.about {font-size: 35px;
 .italic {font-size: 40px;
         font-style: italic;
         position: relative;
-        top: 40px;
-        left: 100px}
+        top: 70px;
+        left: 90px}
 
 .slogan {
         display: inline-block;
         font-family: boycottregular,arial,sans-serif;
         position: relative;
         font-size: 45px ;
-        margin-top: 65px;
-        right: 200px;
+        top: 140px;
+        right: 75px;
         float: right;
         
 
@@ -1325,17 +1325,17 @@ footer {
 
 .footer {
 
+color: white;
 position: relative;
 background-color: white;
 padding-top: 10px;
 margin-bottom: 10px;
 border-top: solid;
 border-width: 3px;
-border-color: black;
-display: inline-block;
+border-color: white;
 text-align: center;
 float: left;
-left: 500px;
-width: 500px;
-}
+width: 100%;
+
+
 

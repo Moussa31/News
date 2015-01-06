@@ -1,48 +1,42 @@
-                            
+* {
+  margin:0;
+  padding:0;
+}
 
+body, html {
+  background: #2A2A2A;
+  overflow: hidden;
+}
 
-/*---------------------------------------------------------------------------------------------------------------------------------------------
+body {
+  background-color: black;
+  margin-left: 85px;
+  margin-right: 85px;
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
 
-                                                            Parallax
-
-
-                            -------------------------------------------------------------------------------*/
-
-
-
-
- 
-
- body, html {
-    background: #2A2A2A;
-    overflow: hidden;
-
-  }
-
-
-  * {
-    margin:0;
-    padding:0;}
-
-
-
-     /* Parallax base styles
-  --------------------------------------------- */
-
-  body {
-    background-color: black;
-    margin-left: 85px;
-    margin-right: 85px;
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;
+.video {
+    position: relative;
   }
   
- .backtotop
-{
+#myvideo {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-color: black; 
+  background-position: center center;
+  background-size: contain;
+  object-fit: cover; 
+  z-index:;
+}
+
+
+.backtotop{
 	bottom: 10px;
 	right: 20px;
 	position:fixed;
@@ -51,114 +45,92 @@
 
 .menu{
  
-    z-index: 100;
-    position: absolute;
-    top:0;left:0;
-    bottom:0 ;
-    right: 0;
-    height: 100%;
-    margin: auto 0;
-    
-  }
+  z-index: 100;
+  position: absolute;
+  top:0;left:0;
+  bottom:0 ;
+  right: 0;
+  height: 100%;
+  margin: auto 0;
+}
 
- .item{
+.item{
  	margin-left:;
 }
 
-
 .nav-bar{
-    display: table;
-    width:100%;
-    margin-left:70px;
-    margin-right:auto;
-    padding:20px;
+  display: table;
+  width:100%;
+  margin-left:70px;
+  margin-right:auto;
+  padding:20px;
 }
+
 .nav-bar .item {
-    display: table-cell;
-
+  display: table-cell;
 }
 
- .link, .link:visited {
-    /* Les liens "au repos" et déjà visités antérieurement */
-    color: #ffffff; /* couleur blanche */
+.link, .link:visited {
+
+  color: #ffffff; 
 }
+
 .link:hover, .link:focus, .link:active {
-    /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
-    color: #ff0000;
+  color: #f64a0c;
 }
 
- .link {
-      text-decoration: none;
-      font-size: 30px; }
+.link {
+  text-decoration: none;
+  font-size: 30px;
+}
 
-  .fdp {
-    position: relative;
+
+
+.parallax__group {
+  position: relative;
+  height: 500px; 
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(.7);
+  transform: translateZ(90px) scale(.7);
+  z-index: 1;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
   }
 
-  .parallax__group {
-    position: relative;
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+}
 
-  .parallax__layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+}
 
-  .parallax__layer--fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-  }
+#group1 {
+  z-index: 5;
+}
 
-  .parallax__layer--base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 4;
-  }
-
-  .parallax__layer--back {
-    -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
-    z-index: 3;
-  }
-
-  .parallax__layer--deep {
-    -webkit-transform: translateZ(-600px) scale(3);
-    transform: translateZ(-600px) scale(3);
-    z-index: 2;
-  }
-
- #myvideo {
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    background-color: black; /* in case the video doesn't fit the whole page*/
-      background-image: /* our video */;
-      background-position: center center;
-      background-size: contain;
-      object-fit: cover; /*cover video background */
-      z-index:;
-  }
-
-
-
-
-
-
-  #group1 {
-    z-index: 5;
-     /* slide over group 2 */
-  }
-  #group1 .parallax__layer--base {
-  }  
- .logo1{
+.logo1{
  
     color: white;
     position: absolute;
@@ -168,8 +140,8 @@
     height: 181px;
     margin: auto 0;
     
-  }
-   .menu{
+}
+.menu{
  
     color: white;
     position: absolute;
@@ -179,7 +151,7 @@
     height: 100%;
     margin: auto 0;
     
-  }
+}
 
 .h1{
     font-size: 5em;
@@ -193,16 +165,13 @@
     border-right: 3px;
     width: 181px;
 
-  }
+}
 
-
-
-
-  #group2 {
+#group2 {
     z-index: 3; 
-    /* slide under groups 1 and 3 */
-  }
-  #group2 .parallax__layer--back {
+}
+
+#group2 .parallax__layer--back {
     
     background-image: url(http://www.webia-creation.fr/wp-content/themes/fullscreen/images/furniture_bck.jpg);width:;
     max-width: 1600;
@@ -211,12 +180,13 @@
     background-repeat: no-repeat;
     height: 100%
 
-  }
+}
 
-  #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
-  }
-  #group3 .parallax__layer--base {
+#group3 {
+    z-index: 4; 
+}
+
+#group3 .parallax__layer--base {
    
     background-image: url(http://www.allfons.ru/pic/201201/1366x768/allfons.ru-5188.jpg);
     max-width: 1600;
@@ -224,27 +194,30 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%
-  }
-  #group3 .parallax__layer--fore{
+}
+
+#group3 .parallax__layer--fore{
      max-width: 1600;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-image:url();
      height: 100% 
-  }
+}
 
-  #group4 {
+#group4 {
     z-index: 2; /* slide under group 3 and 5 */
-  }
-  #group4 .parallax__layer--deep {
+}
+
+#group4 .parallax__layer--deep {
     
     background-image: url(http://img1.mxstatic.com/wallpapers/4545b05465591ec57fb3ae3dc0e2c4c6_large.jpeg);
     max-width: 1600;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
+
 #group4 .parallax__layer--base
     background: rgb(184,223,101);
     background-image: url(.jpg);
@@ -260,19 +233,21 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
-  #group5 {
+#group5 {
     z-index: 4; /* slide over group 4 and 6 */
-  }
-  #group5 .parallax__layer--base {
-    background: grey;
-  }
+}
 
-  #group6 {
+#group5 .parallax__layer--base {
+    background: grey;
+}
+
+#group6 {
     z-index: 2; /* slide under group 5 and 7 */
-  }
-  #group6 .parallax__layer--back {
+}
+
+#group6 .parallax__layer--back {
    
     background-image: url(img/order2.jpg);
     max-width: 1600;
@@ -280,12 +255,15 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-  }
+}
 
-  #group7 {
-    z-index: 3; /* slide over group 7 */
-  }
-  #group7 .parallax__layer--base {
+#group7 {
+    z-index: 3;
+    position: relative;
+    background-color: white;
+}
+
+#group7 .parallax__layer--base {
     background: white;
     background-image: url(img/mh-logo.jpg);
     max-width: 1600;
@@ -313,11 +291,6 @@
 
                          -----------------------------------------------------------------------------------------------*/
 
-
-/*
- *  generated by WOW Slider 7.4
- *  template Bootstrap
- */
 @import url(https://fonts.googleapis.com/css?family=Anton&subset=latin,latin-ext);@font-face {
   font-family: "controls";
   src: url("controls.eot");
@@ -338,16 +311,18 @@
   max-height:720px;
   margin:30px auto 0px;
   z-index:90;
-  text-align:left; /* reset align=center */
+  text-align:left; 
   font-size: 10px;
-  text-shadow: none; /* fix some user styles */
-
-  /* reset box-sizing (to boostrap friendly) */
+  text-shadow: none; 
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box; 
 }
-* html #wowslider-container1{ width:1300px }
+
+* html #wowslider-container1{ 
+  width:1300px 
+}
+
 #wowslider-container1 .ws_images ul{
   position:relative;
   width: 10000%; 
@@ -358,13 +333,14 @@
   padding:0;
   border-spacing:0;
   overflow: visible;
-  /*table-layout:fixed;*/
+  
 }
+
 #wowslider-container1 .ws_images ul li{
   position: relative;
   width:1%;
   height:100%;
-  line-height:0; /*opera*/
+  line-height:0; 
   overflow: hidden;
   float:left;
   font-size:0;
@@ -383,6 +359,7 @@
   border:none;
   overflow: hidden;
 }
+
 #wowslider-container1 .ws_images ul a{
   width:100%;
   height:100%;
@@ -390,9 +367,11 @@
   display:block;
   color:transparent;
 }
+
 #wowslider-container1 img{
   max-width: none !important;
 }
+
 #wowslider-container1 .ws_images .ws_list img,
 #wowslider-container1 .ws_images > div > img{
   width:100%;
@@ -430,7 +409,7 @@
   float:left;
   font-size: 0px;
 }
-/* compatibility with Joomla styles */
+
 #wowslider-container1  .ws_bullets a {
   line-height: 0;
 }
@@ -443,7 +422,7 @@
   position:absolute;
 }
 
-/* prevent some of users reset styles */
+
 #wowslider-container1 .ws_effect {
   position: static;
   width: 100%;
@@ -472,14 +451,14 @@
   cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAABaSURBVEjH7ZMxCkAhDEOT8u9/5TpJ+xWkFse8IYutJgEB8RCHL1qCc90BEFnT6QH7mwgFHBUf8wJyS1TDLuc3vmighx37LZdIth3E5hKj9n6O0HRh+oJCiFcMxRUUDxR1CTMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMDctMDdUMTM6NDk6MzgrMDI6MDDqf+sOAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTA3LTA3VDEzOjQ5OjM4KzAyOjAwmyJTsgAAAABJRU5ErkJggg=="), move;
 }
 
-/* hide controls when video start play */
+
 #wowslider-container1.ws_video_playing .ws_bullets {
   display: none;
 }
 #wowslider-container1.ws_video_playing:hover .ws_bullets {
   display: block;
 }
-/* IE fix because it don't show controls on hover if frame visible */
+
 #wowslider-container1.ws_video_playing_ie .ws_bullets,
 #wowslider-container1.ws_video_playing_ie a.ws_next,
 #wowslider-container1.ws_video_playing_ie a.ws_prev {
@@ -487,7 +466,7 @@
 }
 
 
-/* youtube/vimeo buttons */
+
 #wowslider-container1 .ws_video_btn {
   position: absolute;
   display: none;
@@ -498,10 +477,12 @@
   height: 100%;
   z-index: 55;
 }
+
 #wowslider-container1 .ws_video_btn.ws_youtube,
 #wowslider-container1 .ws_video_btn.ws_vimeo {
   display: block;
 }
+
 #wowslider-container1 .ws_video_btn div {
   position: absolute;
   background-image: url(./playvideo.png);
@@ -513,15 +494,19 @@
   margin-left: -3.5em;
   margin-top: -2.5em;
 }
+
 #wowslider-container1 .ws_video_btn.ws_youtube div {
   background-position: 0 0;
 }
+
 #wowslider-container1 .ws_video_btn.ws_youtube:hover div {
   background-position: 100% 0;
 }
+
 #wowslider-container1 .ws_video_btn.ws_vimeo div {
   background-position: 0 100%;
 }
+
 #wowslider-container1 .ws_video_btn.ws_vimeo:hover div {
   background-position: 100% 100%;
 }
@@ -529,6 +514,7 @@
 #wowslider-container1 .ws_playpause.ws_hide {
   display: none !important;
 }
+
 @font-face {
   font-family: 'fullscreen';
   src: url('fullscreen.eot');
@@ -550,9 +536,11 @@
   z-index: 59;
   color: #fff;
 }
+
 #wowslider-container1:hover .ws_fullscreen {
   display: block;
 }
+
 #wowslider-container1 .ws_fullscreen:after {
   content: '\e800';
 }
@@ -576,6 +564,7 @@
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 .ws_fs_wrapper > #wowslider-container1 .ws_images,
 .ws_fs_wrapper > #wowslider-container1 .ws_images > div > img {
   max-width: none;
@@ -598,7 +587,8 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none; 
-}/* bullets */
+}
+
 #wowslider-container1 .ws_bullets a { 
   position: relative;
   display: inline-block;
@@ -610,6 +600,7 @@
   -webkit-box-shadow: inset 0 0 0 1px #fff;
   box-shadow: inset 0 0 0 1px #fff;
 }
+
 #wowslider-container1 .ws_bullets a.ws_selbull {
   background: #fff;
   padding: 6px;
@@ -617,7 +608,7 @@
   box-shadow: none;
 }
 
-/* arrows */
+
 #wowslider-container1 a.ws_next,
 #wowslider-container1 a.ws_prev {
   position:absolute;
@@ -630,6 +621,7 @@
   top: 0;
   opacity: .5;
 }
+
 #wowslider-container1 a.ws_next {
   left: 85%;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.0001) 0, rgba(0,0,0,0.5) 100%);
@@ -637,6 +629,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x;
 }
+
 #wowslider-container1 a.ws_prev {
   left: 0;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.0001) 100%);
@@ -644,6 +637,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x;
 }
+
 #wowslider-container1 a.ws_next:after,
 #wowslider-container1 a.ws_prev:after {
   position: absolute;
@@ -657,18 +651,21 @@
   color: #fff;
   text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
+
 #wowslider-container1 a.ws_next:after{
   content:'\e801';
 }
+
 #wowslider-container1 a.ws_prev:after{
   content:'\e800';
 }
+
 #wowslider-container1 a.ws_next:hover,
 #wowslider-container1 a.ws_prev:hover{
   opacity: 0.9;
 }
 
-/*playpause*/
+
 #wowslider-container1 .ws_playpause {
   position:absolute;
   font: 3.2em "controls";
@@ -682,19 +679,24 @@
   text-decoration: none;
   z-index: 59;
 }
+
 #wowslider-container1 .ws_playpause:hover {
   opacity: 0.9;
 }
+
 #wowslider-container1 .ws_playpause:after{
   display: block;
   text-align: center;
 }
+
 #wowslider-container1 .ws_pause:after {
   content: '\e803';
 }
+
 #wowslider-container1 .ws_play:after {
   content: '\e802';
-}/* bottom center */
+}
+
 #wowslider-container1  .ws_bullets {
   bottom:20px;
   left:50%;
@@ -702,6 +704,7 @@
 #wowslider-container1  .ws_bullets div{
   left:-50%;
 }
+
 #wowslider-container1 .ws_bulframe span{
   visibility: visible;
   opacity: 1;
@@ -715,7 +718,9 @@
   bottom:-10px;
   margin-left:-7px;
   left:43px;
-}#wowslider-container1 .ws-title{
+}
+
+#wowslider-container1 .ws-title{
   position: absolute;
   background: none;
   color:#fff;
@@ -735,29 +740,38 @@
 
   z-index: 50;
 }
+
 #wowslider-container1 .ws-title div{
-    margin-top: 0.5em;
+  margin-top: 0.5em;
   font-size: 1.3em;
 }
+
 #wowslider-container1 .ws-title span{
   font-size: 2.4em;
-}#wowslider-container1 a.ws_next,
+}
+
+#wowslider-container1 a.ws_next,
 #wowslider-container1 a.ws_prev,
 #wowslider-container1 .ws_playpause {
   display:none;
 }
 
-* html #wowslider-container1 a.ws_next,* html #wowslider-container1 a.ws_prev{display:block}
+* html #wowslider-container1 a.ws_next,* html #wowslider-container1 a.ws_prev{
+    display:block
+}
 
 #wowslider-container1:hover a.ws_next,
 #wowslider-container1:hover a.ws_prev,
 #wowslider-container1:hover .ws_playpause {
   display:block
-}#wowslider-container1 .ws_images > ul{
+}
+
+#wowslider-container1 .ws_images > ul{
   animation: wsBasic 132s infinite;
   -moz-animation: wsBasic 132s infinite;
   -webkit-animation: wsBasic 132s infinite;
 }
+
 @keyframes wsBasic{0%{left:-0%} 1.52%{left:-0%} 3.03%{left:-100%} 4.55%{left:-100%} 6.06%{left:-200%} 7.58%{left:-200%} 9.09%{left:-300%} 10.61%{left:-300%} 12.12%{left:-400%} 13.64%{left:-400%} 15.15%{left:-500%} 16.67%{left:-500%} 18.18%{left:-600%} 19.7%{left:-600%} 21.21%{left:-700%} 22.73%{left:-700%} 24.24%{left:-800%} 25.76%{left:-800%} 27.27%{left:-900%} 28.79%{left:-900%} 30.3%{left:-1000%} 31.82%{left:-1000%} 33.33%{left:-1100%} 34.85%{left:-1100%} 36.36%{left:-1200%} 37.88%{left:-1200%} 39.39%{left:-1300%} 40.91%{left:-1300%} 42.42%{left:-1400%} 43.94%{left:-1400%} 45.45%{left:-1500%} 46.97%{left:-1500%} 48.48%{left:-1600%} 50%{left:-1600%} 51.52%{left:-1700%} 53.03%{left:-1700%} 54.55%{left:-1800%} 56.06%{left:-1800%} 57.58%{left:-1900%} 59.09%{left:-1900%} 60.61%{left:-2000%} 62.12%{left:-2000%} 63.64%{left:-2100%} 65.15%{left:-2100%} 66.67%{left:-2200%} 68.18%{left:-2200%} 69.7%{left:-2300%} 71.21%{left:-2300%} 72.73%{left:-2400%} 74.24%{left:-2400%} 75.76%{left:-2500%} 77.27%{left:-2500%} 78.79%{left:-2600%} 80.3%{left:-2600%} 81.82%{left:-2700%} 83.33%{left:-2700%} 84.85%{left:-2800%} 86.36%{left:-2800%} 87.88%{left:-2900%} 89.39%{left:-2900%} 90.91%{left:-3000%} 92.42%{left:-3000%} 93.94%{left:-3100%} 95.45%{left:-3100%} 96.97%{left:-3200%} 98.48%{left:-3200%} }
 @-moz-keyframes wsBasic{0%{left:-0%} 1.52%{left:-0%} 3.03%{left:-100%} 4.55%{left:-100%} 6.06%{left:-200%} 7.58%{left:-200%} 9.09%{left:-300%} 10.61%{left:-300%} 12.12%{left:-400%} 13.64%{left:-400%} 15.15%{left:-500%} 16.67%{left:-500%} 18.18%{left:-600%} 19.7%{left:-600%} 21.21%{left:-700%} 22.73%{left:-700%} 24.24%{left:-800%} 25.76%{left:-800%} 27.27%{left:-900%} 28.79%{left:-900%} 30.3%{left:-1000%} 31.82%{left:-1000%} 33.33%{left:-1100%} 34.85%{left:-1100%} 36.36%{left:-1200%} 37.88%{left:-1200%} 39.39%{left:-1300%} 40.91%{left:-1300%} 42.42%{left:-1400%} 43.94%{left:-1400%} 45.45%{left:-1500%} 46.97%{left:-1500%} 48.48%{left:-1600%} 50%{left:-1600%} 51.52%{left:-1700%} 53.03%{left:-1700%} 54.55%{left:-1800%} 56.06%{left:-1800%} 57.58%{left:-1900%} 59.09%{left:-1900%} 60.61%{left:-2000%} 62.12%{left:-2000%} 63.64%{left:-2100%} 65.15%{left:-2100%} 66.67%{left:-2200%} 68.18%{left:-2200%} 69.7%{left:-2300%} 71.21%{left:-2300%} 72.73%{left:-2400%} 74.24%{left:-2400%} 75.76%{left:-2500%} 77.27%{left:-2500%} 78.79%{left:-2600%} 80.3%{left:-2600%} 81.82%{left:-2700%} 83.33%{left:-2700%} 84.85%{left:-2800%} 86.36%{left:-2800%} 87.88%{left:-2900%} 89.39%{left:-2900%} 90.91%{left:-3000%} 92.42%{left:-3000%} 93.94%{left:-3100%} 95.45%{left:-3100%} 96.97%{left:-3200%} 98.48%{left:-3200%} }
 @-webkit-keyframes wsBasic{0%{left:-0%} 1.52%{left:-0%} 3.03%{left:-100%} 4.55%{left:-100%} 6.06%{left:-200%} 7.58%{left:-200%} 9.09%{left:-300%} 10.61%{left:-300%} 12.12%{left:-400%} 13.64%{left:-400%} 15.15%{left:-500%} 16.67%{left:-500%} 18.18%{left:-600%} 19.7%{left:-600%} 21.21%{left:-700%} 22.73%{left:-700%} 24.24%{left:-800%} 25.76%{left:-800%} 27.27%{left:-900%} 28.79%{left:-900%} 30.3%{left:-1000%} 31.82%{left:-1000%} 33.33%{left:-1100%} 34.85%{left:-1100%} 36.36%{left:-1200%} 37.88%{left:-1200%} 39.39%{left:-1300%} 40.91%{left:-1300%} 42.42%{left:-1400%} 43.94%{left:-1400%} 45.45%{left:-1500%} 46.97%{left:-1500%} 48.48%{left:-1600%} 50%{left:-1600%} 51.52%{left:-1700%} 53.03%{left:-1700%} 54.55%{left:-1800%} 56.06%{left:-1800%} 57.58%{left:-1900%} 59.09%{left:-1900%} 60.61%{left:-2000%} 62.12%{left:-2000%} 63.64%{left:-2100%} 65.15%{left:-2100%} 66.67%{left:-2200%} 68.18%{left:-2200%} 69.7%{left:-2300%} 71.21%{left:-2300%} 72.73%{left:-2400%} 74.24%{left:-2400%} 75.76%{left:-2500%} 77.27%{left:-2500%} 78.79%{left:-2600%} 80.3%{left:-2600%} 81.82%{left:-2700%} 83.33%{left:-2700%} 84.85%{left:-2800%} 86.36%{left:-2800%} 87.88%{left:-2900%} 89.39%{left:-2900%} 90.91%{left:-3000%} 92.42%{left:-3000%} 93.94%{left:-3100%} 95.45%{left:-3100%} 96.97%{left:-3200%} 98.48%{left:-3200%} }
@@ -772,6 +786,7 @@
     border: 1px solid #FFFFFF;
   max-width:none;
 }
+
 #wowslider-container1 .ws_bullets a:hover img{
   visibility:visible;
 }
@@ -781,6 +796,7 @@
   overflow:visible;
   position:relative;
 }
+
 #wowslider-container1 .ws_bulframe div {
   left:0;
   overflow:hidden;
@@ -788,6 +804,7 @@
   width:86px;
   background-color:#FFFFFF;
 }
+
 #wowslider-container1  .ws_bullets .ws_bulframe{
   display:none;
   bottom:19px;
@@ -796,7 +813,9 @@
   position:absolute;
   cursor:pointer;
     border: 3px solid #FFFFFF;
-}#wowslider-container1 .ws_bulframe div div{
+}
+
+#wowslider-container1 .ws_bulframe div div{
   height: auto;
 }
 
@@ -837,25 +856,20 @@ p.about {font-size: 35px;
 .italic {font-size: 40px;
         font-style: italic;
         position: relative;
-        top: 40px;
-        left: 100px}
+        top: 70px;
+        left: 90px}
 
 .slogan {
         display: inline-block;
         font-family: boycottregular,arial,sans-serif;
         position: relative;
         font-size: 45px ;
-        margin-top: 65px;
-        right: 200px;
+        top: 140px;
+        right: 75px;
         float: right;
         
 
         }
-
-
-
-
-
 
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------
@@ -967,46 +981,12 @@ input, select { vertical-align: middle; }
 
 
 
-
-
-/**
-
- * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
-
- */
-
-
-
-
-
 select, input, textarea, button { font:99% sans-serif; }
 
-
-
-/* Normalize monospace sizing:
-
-   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
 
 pre, code, kbd, samp { font-family:interstateregular, monospace, sans-serif; }
 
 
-
-
-
-/**
-
- * Minimal base styles.
-
- */
-
-
-
-/* Always force a scrollbar in non-IE */
-
-
-
-
-/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 
 a:hover, a:active { outline: none; }
 
@@ -1015,10 +995,6 @@ a:hover, a:active { outline: none; }
 ul, ol { margin-left: 10px; }
 
 ol { list-style-type: decimal; }
-
-
-
-/* Remove margins for navigation lists */
 
 nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
 
@@ -1033,9 +1009,6 @@ strong, th { font-weight: bold; }
 td { vertical-align: top; }
 
 
-
-/* Set sub, sup without affecting line-height: gist.github.com/413930 */
-
 sub, sup { font-size: 75%; line-height: 0; position: relative; }
 
 sup { top: -0.5em; }
@@ -1046,8 +1019,6 @@ sub { bottom: -0.25em; }
 
 pre {
 
-  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-
   white-space: pre; white-space: pre-wrap; word-wrap: break-word;
 
   padding: 15px;
@@ -1056,15 +1027,12 @@ pre {
 
 
 
-textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+textarea { overflow: auto; }
 
 
 
 .ie6 legend, .ie7 legend { margin-left: -7px; } 
 
-
-
-/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
 
 input[type="radio"] { vertical-align: text-bottom; }
 
@@ -1075,20 +1043,11 @@ input[type="checkbox"] { vertical-align: bottom; }
 .ie6 input { vertical-align: text-bottom; }
 
 
-
-/* Hand cursor on clickable input elements */
-
 label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
 
 
-
-/* Webkit browsers add a 2px margin outside the chrome of form elements */
-
 button, input, select, textarea { margin: 0; }
 
-
-
-/* Colors for form validity */
 
 input:valid, textarea:valid   {  }
 
@@ -1101,49 +1060,19 @@ input:invalid, textarea:invalid {
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
 
-
-
-
-/* These selection declarations have to be separate
-
-   No text-shadow: twitter.com/miketaylr/status/12228805301
-
-   Also: hot pink! */
-
 ::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
 
 ::selection { background:#FF5E99; color:#fff; text-shadow: none; }
 
 
 
-/* j.mp/webkit-tap-highlight-color */
-
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 
-
-
-/* Make buttons play nice in IE:
-
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
 
 button {  width: auto; overflow: visible; }
 
 
-
-/* Bicubic resizing for non-native sized IMG:
-
-   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
-
 .ie7 img { -ms-interpolation-mode: bicubic; }
-
-
-
-/**
-
- * You might tweak these..
-
- */
-
 
 
 body, select, input, textarea {
@@ -1158,23 +1087,6 @@ body, select, input, textarea {
 a, a:active, a:visited { color: #fff; text-decoration:none;}
 
 a:hover { color: #fff; border-bottom:dotted 1px #fff;}
-
-
-
-
-
-
-
-/**
-
- * Primary styles
-
- *
-
- * Author: 
-
- */
-
 
 
 header{
@@ -1377,65 +1289,28 @@ input:focus:required:invalid {
 
 
 
-
-
-/**
-
- * Non-semantic helper classes: please define your styles before this section.
-
- */
-
-
-
-/* For image replacement */
-
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 
-
-
-/* Hide for both screenreaders and browsers:
-
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
 
 .hidden { display: none; visibility: hidden; }
 
 
-
-/* Hide only visually, but have it available for screenreaders: by Jon Neal.
-
-  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
-
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
 
 .visuallyhidden.focusable:active,
 
 .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 
 
-
-/* Hide visually and from screenreaders, but maintain layout */
-
 .invisible { visibility: hidden; }
 
-
-
-/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
-
-   j.mp/bestclearfix */
 
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 
 .clearfix:after { clear: both; }
 
-/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
-
 .clearfix { zoom: 1; }
-
-
-
-
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1444,29 +1319,19 @@ input:focus:required:invalid {
                                    ------------------------------------------------------------------------------*/
 
 
-footer {background-color: white;}
-
-#group7 {
-
-position: relative;
-background-color: white;
- }
-
-
 .footer {
 
+color: white;
 position: relative;
-background-color: white;
+background-color: black;
 padding-top: 10px;
 margin-bottom: 10px;
 border-top: solid;
 border-width: 3px;
-border-color: black;
-display: inline-block;
+border-color: white;
 text-align: center;
 float: left;
-left: 500px;
-width: 500px;
+width: 100%;
 
 
 
